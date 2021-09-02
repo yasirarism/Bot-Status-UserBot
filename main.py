@@ -4,17 +4,17 @@ import pytz
 import datetime
 from pyrogram import Client
 
-SESSION_STRING = os.environ.get("SESSION_STRING")
-API_ID = int(os.environ.get("API_ID"))
-API_HASH = os.environ.get("API_HASH")
-BOTS = [i.strip() for i in os.environ.get("BOTS").split()]
-BOT_OWNER = os.environ.get("BOT_OWNER")
-UPDATE_CHANNEL = int(os.environ.get("UPDATE_CHANNEL"))
-MESSAGE_ID = int(os.environ.get("MESSAGE_ID"))
+SESSION_STRING = os.environ.get("SESSION_STRING", None)
+API_ID = int(os.environ.get("API_ID", None))
+API_HASH = os.environ.get("API_HASH", None)
+BOTS = [i.strip() for i in os.environ.get("BOTS", None).split()]
+BOT_OWNER = os.environ.get("BOT_OWNER", None)
+UPDATE_CHANNEL = int(os.environ.get("UPDATE_CHANNEL", None))
+MESSAGE_ID = int(os.environ.get("MESSAGE_ID", None))
 TIME_LIMIT = int(os.environ.get("TIME_LIMIT", "300"))
 SLEEP_TIME = int(os.environ.get("SLEEP_TIME", "30"))
 HEADING = os.environ.get("HEADING", "--**Bots Online Status**--")
-ATTACH_LINK = os.environ.get("ATTACH_LINK", "")
+ATTACH_LINK = os.environ.get("ATTACH_LINK", None)
 
 User = Client(
     SESSION_STRING,
@@ -74,4 +74,9 @@ def main():
                 )
             time.sleep(TIME_LIMIT * 60)
 
-main()
+
+if SESSION_STRING and API_HASH and API_ID and BOTS and BOT_OWNER and UPDATE_CHANNEL and MESSAGE_ID:
+    print("Bot working fine")
+    main()
+else:
+    print("Fill full variables")
