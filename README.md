@@ -1,12 +1,5 @@
-## Deploy
-
-```sh
-git clone https://github.com/FayasNoushad/Bot-Status-UserBot.git
-cd Bot-Status-UserBot
-pip3 install -r requirements.txt
-# <Create Variables appropriately>
-python3 main.py
-```
+# Bot Status Userbot
+A telegram bot status userbot
 
 ---
 
@@ -26,9 +19,8 @@ python3 main.py
 
 ---
 
-## Credits
+## Original Developer
 
 - Full credits goes to [Christy Roys](https://github.com/odysseusmax) for his [Bot Status UserBot](https://github.com/odysseusmax/bug-free-broccoli)
-- Updated / Modified by [FayasNoushad](https://github.com/FayasNoushad)
 
 ---
