@@ -30,7 +30,7 @@ def main():
             print("[INFO] starting to check uptime..")
             if ATTACH_LINK:
                 hide_preview = False
-                status_text = f"[\u2063]({ATTACH_LINK})" + HEADING + "\n"
+                status_text = f"[\u2063]({ATTACH_LINK}){HEADING}" + "\n"
             else:
                 hide_preview = True
                 status_text = HEADING + "\n"
@@ -57,7 +57,7 @@ def main():
                 User.read_history(bot)
             limit = TIME_LIMIT // 60
             utc_now = datetime.datetime.now(pytz.timezone('UTC')).strftime("%I:%M %p %d/%m/%y")
-            status_text += f"\n**Last checked:**\n{str(utc_now)} UTC ⏰"
+            status_text += f"\n**Last checked:**\n{utc_now} UTC ⏰"
             status_text += f"\n`Updated on every {limit} hours`"
             try:
                 User.edit_message_text(
